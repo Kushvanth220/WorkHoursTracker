@@ -27,7 +27,6 @@ function createWeekData(weeks) {
       date: day.date,
       start: '',
       end: '',
-      notes: '',
     })),
   }))
 }
@@ -41,7 +40,6 @@ function hydrateWeekData(weeks, savedData) {
         date: day.date,
         start: savedWeek?.days?.[index]?.start ?? '',
         end: savedWeek?.days?.[index]?.end ?? '',
-        notes: savedWeek?.days?.[index]?.notes ?? '',
       })),
     }
   })
@@ -118,7 +116,7 @@ function App() {
           ...week,
           days: week.days.map((day, idx) => {
             if (idx !== dayIndex) return day
-            return { ...day, [field]: field === 'notes' ? value : normalizeTimeInput(value) }
+            return { ...day, [field]: normalizeTimeInput(value) }
           }),
         }
       }),
@@ -133,12 +131,8 @@ function App() {
     localStorage.removeItem(STORAGE_KEY)
   }
 
-  function generateTimesheet() {
-    setWeekData((prev) => hydrateWeekData(weeks, prev))
-  }
-
   function buildExportRows() {
-    const rows = [['Week', 'Day', 'Date', 'Start Hour', 'End Hour', 'Hours Worked', 'Notes']]
+    const rows = [['Week', 'Day', 'Date', 'Start Hour', 'End Hour', 'Hours Worked']]
     weeks.forEach((week, weekIdx) => {
       week.days.forEach((day, dayIdx) => {
         const dayData = weekData[weekIdx]?.days?.[dayIdx]
@@ -150,7 +144,6 @@ function App() {
           dayData?.start ?? '',
           dayData?.end ?? '',
           workedHours === null ? '' : workedHours.toFixed(2),
-          dayData?.notes ?? '',
         ])
       })
     })
@@ -216,7 +209,6 @@ function App() {
             ...day,
             start,
             end,
-            notes: dayData?.notes ?? '',
             workedHours,
             error,
           }
@@ -247,11 +239,11 @@ function App() {
         startDate={startDate}
         weekCount={weekCount}
         endDate={toDateInputValue(endDate)}
+        grandTotal={grandTotal}
         themeMode={themeMode}
         onStartDateChange={setStartDate}
         onWeekCountChange={(value) => setWeekCount(Math.max(1, Math.min(26, value)))}
         onToggleTheme={() => setThemeMode((prev) => (prev === 'dark' ? 'light' : 'dark'))}
-        onGenerate={generateTimesheet}
         onReset={resetAll}
         onExportCsv={exportCsv}
         onExportExcel={exportExcel}

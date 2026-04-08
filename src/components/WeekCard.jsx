@@ -18,7 +18,6 @@ export function WeekCard({ week, onFieldChange }) {
               <th>Start Hour</th>
               <th>End Hour</th>
               <th>Hours Worked</th>
-              <th>Notes</th>
             </tr>
           </thead>
           <tbody>
@@ -52,16 +51,6 @@ export function WeekCard({ week, onFieldChange }) {
                 <td data-label="Hours Worked">
                   {row.workedHours === null ? '-' : row.workedHours.toFixed(2)}
                 </td>
-                <td data-label="Notes">
-                  <input
-                    type="text"
-                    placeholder="Optional notes"
-                    value={row.notes}
-                    onChange={(event) =>
-                      onFieldChange(week.weekIndex, dayIndex, 'notes', event.target.value)
-                    }
-                  />
-                </td>
               </tr>
             ))}
           </tbody>
@@ -71,7 +60,6 @@ export function WeekCard({ week, onFieldChange }) {
                 Weekly Total Hours
               </td>
               <td>{week.weeklyTotal.toFixed(2)}</td>
-              <td />
             </tr>
           </tfoot>
         </table>

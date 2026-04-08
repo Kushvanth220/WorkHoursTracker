@@ -2,11 +2,11 @@ export function ControlCard({
   startDate,
   weekCount,
   endDate,
+  grandTotal,
   themeMode,
   onStartDateChange,
   onWeekCountChange,
   onToggleTheme,
-  onGenerate,
   onReset,
   onExportCsv,
   onExportExcel,
@@ -14,6 +14,10 @@ export function ControlCard({
 }) {
   return (
     <section className="card control-card">
+      <div className="control-top">
+        <p className="kpi-label">Total Hours</p>
+        <p className="kpi-value">{grandTotal.toFixed(2)}</p>
+      </div>
       <div className="control-grid">
         <label>
           <span>Start Date</span>
@@ -39,7 +43,6 @@ export function ControlCard({
         </label>
       </div>
       <div className="button-row">
-        <button onClick={onGenerate}>Generate Timesheet</button>
         <button onClick={onToggleTheme} className="ghost">
           {themeMode === 'dark' ? 'Switch to Light' : 'Switch to Dark'}
         </button>
