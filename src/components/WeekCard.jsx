@@ -24,9 +24,9 @@ export function WeekCard({ week, onFieldChange }) {
           <tbody>
             {week.rows.map((row, dayIndex) => (
               <tr key={`${week.weekIndex}-${row.date}`} className={row.isWeekend ? 'weekend' : ''}>
-                <td>{row.dayName}</td>
-                <td>{formatDate(row.date)}</td>
-                <td>
+                <td data-label="Day">{row.dayName}</td>
+                <td data-label="Date">{formatDate(row.date)}</td>
+                <td data-label="Start Hour">
                   <input
                     type="text"
                     inputMode="text"
@@ -38,7 +38,7 @@ export function WeekCard({ week, onFieldChange }) {
                   />
                   {row.error ? <small className="error">{row.error}</small> : null}
                 </td>
-                <td>
+                <td data-label="End Hour">
                   <input
                     type="text"
                     inputMode="text"
@@ -49,8 +49,10 @@ export function WeekCard({ week, onFieldChange }) {
                     }
                   />
                 </td>
-                <td>{row.workedHours === null ? '-' : row.workedHours.toFixed(2)}</td>
-                <td>
+                <td data-label="Hours Worked">
+                  {row.workedHours === null ? '-' : row.workedHours.toFixed(2)}
+                </td>
+                <td data-label="Notes">
                   <input
                     type="text"
                     placeholder="Optional notes"
