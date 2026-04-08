@@ -3,6 +3,7 @@ export function ControlCard({
   weekCount,
   endDate,
   grandTotal,
+  categoryName,
   themeMode,
   onStartDateChange,
   onWeekCountChange,
@@ -15,9 +16,12 @@ export function ControlCard({
   return (
     <section className="card control-card">
       <div className="control-top">
-        <p className="kpi-label">Total Hours</p>
-        <p className="kpi-value">{grandTotal.toFixed(2)}</p>
+        <div>
+          <p className="kpi-label">Total hours — {categoryName || 'this category'}</p>
+          <p className="kpi-value">{grandTotal.toFixed(2)}</p>
+        </div>
       </div>
+      <p className="control-category-hint">Dates and weeks below apply only while this category is selected.</p>
       <div className="control-grid">
         <label>
           <span>Start Date</span>
@@ -47,7 +51,7 @@ export function ControlCard({
           {themeMode === 'dark' ? 'Switch to Light' : 'Switch to Dark'}
         </button>
         <button onClick={onReset} className="ghost">
-          Reset
+          Reset category
         </button>
         <button onClick={onExportCsv} className="secondary">
           Export CSV

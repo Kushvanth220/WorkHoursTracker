@@ -1,9 +1,9 @@
 import { formatDate } from '../utils/date'
 
-export function SummaryCard({ grandTotal, weekCount, averageWeeklyHours, startDate, endDate }) {
+export function SummaryCard({ grandTotal, weekCount, averageWeeklyHours, startDate, endDate, title }) {
   return (
     <section className="card summary-card">
-      <h2>Summary</h2>
+      <h2>{title || 'Summary'}</h2>
       <div className="summary-grid">
         <p>
           <strong>Grand Total Hours:</strong> {grandTotal.toFixed(2)}
