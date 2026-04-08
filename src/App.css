@@ -87,6 +87,251 @@ button.wide {
   max-width: 420px;
 }
 
+.unlock-card {
+  max-width: 480px;
+}
+
+.unlock-lead {
+  line-height: 1.55;
+}
+
+.unlock-hint {
+  margin: 0 0 12px;
+  font-size: 0.88rem;
+  color: var(--accent-strong);
+  font-weight: 600;
+}
+
+.unlock-footer {
+  margin-top: 20px;
+  padding-top: 16px;
+  border-top: 1px solid var(--table-border);
+  text-align: center;
+}
+
+.unlock-footer-label {
+  margin: 0 0 8px;
+  font-size: 0.88rem;
+  color: var(--text-muted);
+}
+
+.back-to-pin {
+  width: 100%;
+  margin-bottom: 16px;
+}
+
+.create-profile-card {
+  max-width: 480px;
+}
+
+.create-form-title {
+  margin: 20px 0 6px;
+  font-size: 1.15rem;
+  text-align: center;
+}
+
+.greeting-hero {
+  text-align: center;
+  padding: 8px 0 16px;
+}
+
+.greeting-hero-avatar {
+  display: block;
+  width: 140px;
+  height: 140px;
+  margin: 0 auto 16px;
+  border-radius: 50%;
+  overflow: hidden;
+  cursor: pointer;
+  border: 3px solid var(--accent-strong);
+  background: var(--summary-chip-bg);
+  position: relative;
+}
+
+.greeting-hero-avatar input {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  cursor: pointer;
+}
+
+.greeting-hero-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.greeting-hero-placeholder {
+  display: grid;
+  place-items: center;
+  height: 100%;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--text-secondary);
+  padding: 12px;
+  text-align: center;
+}
+
+.greeting-hero-title {
+  margin: 0 0 4px;
+  font-size: clamp(1.35rem, 4vw, 1.85rem);
+  color: var(--text-primary);
+}
+
+.greeting-hero-line {
+  margin: 0 0 6px;
+  font-size: 1.1rem;
+  color: var(--text-secondary);
+}
+
+.greeting-hero-sub {
+  margin: 0;
+  font-size: 1rem;
+  color: var(--text-muted);
+}
+
+.greeting-dashboard {
+  margin-bottom: 4px;
+}
+
+.greeting-dashboard-visual {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 20px 24px;
+}
+
+.greeting-dashboard-avatar {
+  position: relative;
+  width: min(160px, 38vw);
+  height: min(160px, 38vw);
+  min-width: 120px;
+  min-height: 120px;
+  border-radius: 50%;
+  overflow: hidden;
+  cursor: pointer;
+  flex-shrink: 0;
+  border: 3px solid color-mix(in oklab, var(--accent-strong) 70%, transparent);
+  background: var(--summary-chip-bg);
+}
+
+.greeting-dashboard-avatar input {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  cursor: pointer;
+  z-index: 2;
+}
+
+.greeting-dashboard-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.greeting-dashboard-placeholder {
+  display: grid;
+  place-items: center;
+  height: 100%;
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: var(--text-secondary);
+  text-align: center;
+  padding: 12px;
+  pointer-events: none;
+}
+
+.greeting-dashboard-copy {
+  flex: 1;
+  min-width: 200px;
+}
+
+.greeting-dashboard-greet {
+  margin: 0 0 6px;
+  font-size: clamp(1.2rem, 3.2vw, 1.65rem);
+  color: var(--text-primary);
+  line-height: 1.35;
+}
+
+.greeting-dashboard-tagline {
+  margin: 0 0 14px;
+  font-size: 1.05rem;
+  color: var(--text-secondary);
+}
+
+.greeting-dashboard-name-label {
+  display: block;
+  margin-bottom: 12px;
+}
+
+.greeting-dashboard-name-input {
+  width: 100%;
+  max-width: 320px;
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+.lock-profile-btn {
+  margin-top: 4px;
+}
+
+.delete-profile-zone {
+  margin-top: 20px;
+  padding-top: 18px;
+  border-top: 1px solid var(--table-border);
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  max-width: 400px;
+}
+
+.delete-profile-title {
+  margin: 0;
+  font-size: 0.95rem;
+  color: var(--error);
+}
+
+.delete-profile-desc {
+  margin: 0;
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  line-height: 1.45;
+}
+
+.delete-profile-checkbox-label {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  font-size: 0.88rem;
+  color: var(--text-secondary);
+  cursor: pointer;
+}
+
+.delete-profile-checkbox-label input {
+  margin-top: 3px;
+  width: auto;
+  flex-shrink: 0;
+}
+
+.delete-profile-submit {
+  align-self: flex-start;
+  background: linear-gradient(180deg, #ef4444, #dc2626) !important;
+  box-shadow: 0 6px 16px rgba(220, 38, 38, 0.35) !important;
+}
+
+.delete-profile-submit:hover {
+  box-shadow: 0 8px 20px rgba(220, 38, 38, 0.4) !important;
+}
+
+.header-compact h1 {
+  margin: 0 0 4px;
+  font-size: clamp(1.35rem, 3vw, 1.75rem);
+}
+
+.header-compact {
+  margin-bottom: 0;
+}
+
 .pin-sub {
   color: var(--text-secondary);
   font-size: 0.95rem;
@@ -681,6 +926,10 @@ tfoot td {
   }
 
   .profile-toolbar,
+  .greeting-dashboard-avatar input,
+  .lock-profile-btn,
+  .delete-profile-zone,
+  .greeting-dashboard-name-input,
   .categories-card .category-actions,
   .categories-card .category-add-row {
     display: none;
